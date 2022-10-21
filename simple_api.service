@@ -1,0 +1,11 @@
+[Unit]
+Description=Simple API Service
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/default/simple_api.conf
+ExecStart=/usr/local/bin/simple_api
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
