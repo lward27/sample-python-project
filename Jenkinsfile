@@ -1,9 +1,13 @@
 pipeline {
-    agent { label "built-in" }
+    agent none
     stages {
         stage('build') {
+            agent {
+                docker {
+                    image 'python:3-alpine'
+                }
+            }
             steps {
-                sh "bash deps.sh"
                 sh "bash build.sh"
             }
         }
