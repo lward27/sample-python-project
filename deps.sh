@@ -2,5 +2,5 @@
 set -e
 set -x
 
-apt update
-apt install python3
+apt-get update
+apt-get install python3
