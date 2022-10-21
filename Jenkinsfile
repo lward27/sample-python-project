@@ -1,12 +1,12 @@
 pipeline {
-    agent none
+    agent {
+        docker {
+            image 'python:3'
+            label 'my-build-agent'
+        }
+    }
     stages {
         stage('build') {
-            agent {
-                docker {
-                    image 'python:3-alpine'
-                }
-            }
             steps {
                 sh "bash build.sh"
             }
