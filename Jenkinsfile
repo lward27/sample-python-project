@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.10-alpine'
-        }
-    }
+    agent { label "built-in" }
     stages {
         stage('build') {
             steps {
